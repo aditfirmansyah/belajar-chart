@@ -26,8 +26,9 @@
 
 <body>
     <h1>Choose This Menu</h1>
-    <a href="chart-bar.php">Chart Bar</a>
-    <a href="chart-bar-sql.php">Chart Bar SQL</a>
+    <a href="chart-bar.php">Chart Bar Penjualan</a>
+    <a href="chart-bar-sql.php">Chart Bar Penjualan SQL</a>
+    <a href="mahasiswa.php">Chart Bar Mahasiswa SQL</a>
 </body>
 
 </html>
