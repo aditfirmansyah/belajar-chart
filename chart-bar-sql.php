@@ -1,3 +1,8 @@
+<?php
+$koneksi     = mysqli_connect("localhost", "root", "", "belajarchart");
+$bulan       = mysqli_query($koneksi, "SELECT bulan FROM penjualan WHERE tahun='2016' order by id asc");
+$penghasilan = mysqli_query($koneksi, "SELECT hasil_penjualan FROM penjualan WHERE tahun='2016' order by id asc");
+?>
 <html>
 
 <head>
@@ -20,11 +25,21 @@
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+                labels: [<?php while ($b = mysqli_fetch_array($bulan)) {
+                                echo '"' . $b['bulan'] . '",';
+                            } ?>],
                 datasets: [{
-                    label: '# of votes',
-                    data: [12, 19, 3, 5, 2, 3],
+                    label: '# of Votes',
+                    data: [<?php while ($p = mysqli_fetch_array($penghasilan)) {
+                                echo '"' . $p['hasil_penjualan'] . '",';
+                            } ?>],
                     backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
                         'rgba(255, 206, 86, 0.2)',
@@ -38,7 +53,13 @@
                         'rgba(255, 206, 86, 1)',
                         'rgba(75, 192, 192, 1)',
                         'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
                     ],
                     borderWidth: 1
                 }]
