@@ -29,6 +29,8 @@
     <a href="chart-bar.php">Chart Bar Penjualan</a>
     <a href="chart-bar-sql.php">Chart Bar Penjualan SQL</a>
     <a href="mahasiswa.php">Chart Bar Mahasiswa SQL</a>
+    <a href="chart-bar-barang.php">Chart Bar Barang SQL</a>
+    <a href="chart-pie.php">Chart Pie Barang SQL</a>
 </body>
 
 </html>
